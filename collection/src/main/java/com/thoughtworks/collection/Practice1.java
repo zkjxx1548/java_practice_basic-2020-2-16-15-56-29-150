@@ -2,6 +2,7 @@ package com.thoughtworks.collection;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Random;
 
 public class Practice1 {
@@ -13,14 +14,11 @@ public class Practice1 {
      *  生成10个0到20的随机整数，要求不能重复
      */
     public static Collection<Integer> randomNumber() {
-        Collection<Integer> collection = new ArrayList<>();
+        Collection<Integer> set = new HashSet<>();
         Random random = new Random();
-        while (collection.size() < 10){
-            int num = random.nextInt(20);
-            if (!collection.contains(num)) {
-                collection.add(num);
-            }
+        while (set.size() < 10){
+            set.add(random.nextInt(21));
         }
-        return collection;
+        return set;
     }
 }
